@@ -1,7 +1,7 @@
 import psycopg2
 
 
-conn = psycopg2.connect(database="study_db", user="postgres", password="qwerty")
+with psycopg2.connect(database="study_db", user="postgres", password="") as con:
 
 def create_tables():
     with conn.cursor() as cur:
@@ -194,7 +194,8 @@ def search_customer(search_request: str):
             if result[i][3] == result[i-1][3]:
                 break
 
-# ===Test functions===
+if __name__ = "__main__"
+
 try:
     create_tables()
 except psycopg2.errors.DuplicateTable:
